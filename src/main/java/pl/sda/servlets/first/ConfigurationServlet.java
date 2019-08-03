@@ -1,0 +1,26 @@
+package pl.sda.servlets.first;
+
+import javax.servlet.annotation.WebInitParam;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+@WebServlet(name = "HelloServlet",
+        urlPatterns = {"/hello", "/hi", "/Hello"},
+        initParams = {@WebInitParam(name = "who", value = "World"),
+                @WebInitParam(name = "times", value = "5")},
+        loadOnStartup = 1)
+public class ConfigurationServlet extends HttpServlet {
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String who = request.getParameter("who");
+        String whoInit = this.getInitParameter("who");
+        PrintWriter writer = response.getWriter();
+        response.setContentType("text/html");
+        writer.println(who);
+        writer.println(whoInit);
+    }
+}
