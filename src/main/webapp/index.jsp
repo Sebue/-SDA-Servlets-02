@@ -30,6 +30,15 @@ Z parametrem<br>
     <INPUT TYPE="SUBMIT" VALUE="Wyślij">
 </FORM>
 <hr>
+<h3>Servlet 4: JSP</h3>
+<a href="/servlets02/jsp">Przekierowanie z servletu</a><br>
+<a href="/servlets02/JspHelloWorld.jsp">Strona JSP</a>
+<hr>
+<h3>Servlet 6: Get and Post</h3>
+<a href="/servlets02/getServlet">Get</a><br>
+<a href="/servlets02/getPost.html">HTML</a><br>
+<a href="/servlets02/postServlet">Post</a>
+<hr>
 
 </body>
 </html>

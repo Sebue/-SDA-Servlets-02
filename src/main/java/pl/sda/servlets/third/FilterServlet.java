@@ -15,7 +15,6 @@ public class FilterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
-        response.setContentType("text/html");
         String user = (String) request.getAttribute(USER);
         writer.println("<h1>Witaj " + user + "!</h1><br>");
     }
