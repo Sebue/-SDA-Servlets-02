@@ -39,6 +39,12 @@ Z parametrem<br>
 <a href="/servlets02/getPost.html">HTML</a><br>
 <a href="/servlets02/postServlet">Post</a>
 <hr>
+<h3>Servlet 7: Cookies</h3>
+<a href="/servlets02/cookie">Cookie</a><br>
+<hr>
+<h3>Servlet 8: Session</h3>
+<a href="/servlets02/session">Session</a><br>
+<hr>
 
 </body>
 </html>
