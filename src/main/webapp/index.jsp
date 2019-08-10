@@ -9,7 +9,7 @@
 
 <h3>Servlet 1: Configuration</h3>
 <a href="/servlets02/hi">Default</a>
-<FORM ACTION="http://localhost:8080/servlets02/hi"
+<FORM ACTION="/servlets02/hi"
       METHOD="GET">
     Imię:
     <INPUT TYPE="TEXT" NAME="who"><BR>
