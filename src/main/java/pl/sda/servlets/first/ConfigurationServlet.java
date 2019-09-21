@@ -15,12 +15,14 @@ import java.io.PrintWriter;
         loadOnStartup = 1)
 public class ConfigurationServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @Override
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response) throws IOException {
         String who = request.getParameter("who");
         String whoInit = this.getInitParameter("who");
         PrintWriter writer = response.getWriter();
         response.setContentType("text/html");
-        writer.println(who);
-        writer.println(whoInit);
+        writer.println("<h2>Hello, " + who + "</h2><br>");
+        writer.println("<h2>Hello, " + whoInit + " (from init param)</h2>");
     }
 }

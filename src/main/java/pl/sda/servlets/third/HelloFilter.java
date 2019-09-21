@@ -10,9 +10,12 @@ import java.util.Map;
 public class HelloFilter implements Filter {
 
     public static final String USER = "user";
+    private static final String UNKNOWN_USER_NAME = "Unknown";
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+    public void doFilter(ServletRequest servletRequest,
+                         ServletResponse servletResponse,
+                         FilterChain filterChain) throws IOException, ServletException {
         //todo before
         servletResponse.setCharacterEncoding("UTF-8");
         servletResponse.setContentType("text/html");
@@ -20,7 +23,7 @@ public class HelloFilter implements Filter {
         if(parameterMap.containsKey(USER)){
             servletRequest.setAttribute(USER, parameterMap.get(USER)[0]);
         } else {
-            servletRequest.setAttribute(USER, "Unknown");
+            servletRequest.setAttribute(USER, UNKNOWN_USER_NAME);
         }
 
         //servlet execution

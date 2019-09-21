@@ -12,7 +12,9 @@ import static pl.sda.servlets.third.HelloFilter.USER;
 @WebServlet("/filter")
 public class FilterServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @Override
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
         String user = (String) request.getAttribute(USER);

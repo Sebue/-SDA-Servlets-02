@@ -9,7 +9,8 @@ import java.io.IOException;
 @WebServlet("/clientRedirect")
 public class ClientRedirectServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response) throws IOException {
         response.sendRedirect("/servlets02/redirects");
     }
 }
