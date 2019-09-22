@@ -10,7 +10,9 @@ import java.io.PrintWriter;
 @WebServlet("/postServlet")
 public class PostServlet extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @Override
+    protected void doPost(HttpServletRequest request,
+                          HttpServletResponse response) throws IOException {
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
@@ -24,8 +26,10 @@ public class PostServlet extends HttpServlet {
 
 
 
-//todo after 405
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//todo after 405 - Method Not Allowed
+    @Override
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response) throws IOException {
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");

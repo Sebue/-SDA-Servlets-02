@@ -11,8 +11,9 @@ import java.io.PrintWriter;
 @WebServlet("/cookie")
 public class CookieServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//error in postman
+    @Override
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response) throws IOException {
         PrintWriter writer = response.getWriter();
         response.setContentType("text/html");
         writer.println("<h1>Cookie:</h1><br>");

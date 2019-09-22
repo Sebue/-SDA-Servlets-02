@@ -10,7 +10,10 @@ import java.io.IOException;
 @WebServlet("/jsp")
 public class JSPHelloWorld extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/JspHelloWorld.jsp").include(request, response);
+    @Override
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/JspHelloWorld.jsp")
+                .include(request, response);
     }
 }

@@ -11,9 +11,11 @@ import java.io.PrintWriter;
 @WebServlet("/session")
 public class SessionServlet extends HttpServlet {
 
-    public static final String ATTRIBUTE_NAME = "welcomeCount";
+    private static final String ATTRIBUTE_NAME = "welcomeCount";
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @Override
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response) throws IOException {
         PrintWriter writer = response.getWriter();
         response.setContentType("text/html");
 
@@ -27,7 +29,9 @@ public class SessionServlet extends HttpServlet {
         } else {
             httpSession.setAttribute(ATTRIBUTE_NAME,
                     (int) httpSession.getAttribute(ATTRIBUTE_NAME) + 1);
-            writer.println("<h1>Witaj " + httpSession.getAttribute(ATTRIBUTE_NAME) + " raz na stronie!</h1><br>");
+            writer.println("<h1>Witaj "
+                    + httpSession.getAttribute(ATTRIBUTE_NAME)
+                    + " raz na stronie!</h1><br>");
         }
     }
 }
