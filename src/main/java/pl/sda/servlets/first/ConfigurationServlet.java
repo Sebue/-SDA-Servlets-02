@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Optional;
 
 @WebServlet(name = "HelloServlet",
         urlPatterns = {"/hello", "/hi", "/Hello"},
@@ -18,11 +19,14 @@ public class ConfigurationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws IOException {
-        String who = request.getParameter("who");
+        String who = Optional.ofNullable(request.getParameter("who"))
+                .orElse("Unknown");
+        String whoPerhapsNull = request.getParameter("who");
         String whoInit = this.getInitParameter("who");
         PrintWriter writer = response.getWriter();
         response.setContentType("text/html");
         writer.println("<h2>Hello, " + who + "</h2><br>");
+        writer.println("<h2>Hello, " + whoPerhapsNull + " (maybe null)</h2><br>");
         writer.println("<h2>Hello, " + whoInit + " (from init param)</h2>");
     }
 }

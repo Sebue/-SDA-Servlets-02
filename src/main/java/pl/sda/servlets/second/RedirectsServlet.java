@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 @WebServlet("/redirects")
 public class RedirectsServlet extends HttpServlet {
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter writer = response.getWriter();
         response.setContentType("text/html");

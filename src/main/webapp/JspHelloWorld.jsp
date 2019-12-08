@@ -1,10 +1,5 @@
-<%@ page language="java" contentType="text/html"%>
-<html>
-    <head>
-        <title>JSP Hello World</title>
-    </head>
-
-    <body>
+<%@ include file="header.jsp" %>
         <h2><% out.print("JSP says hello!");%></h2>
-    </body>
-</html>
+        <h2><% out.print("JSP says hello!");%></h2>
+        <h2><% out.print("JSP says hello!");%></h2>
+<%@ include file="footer.jsp" %>

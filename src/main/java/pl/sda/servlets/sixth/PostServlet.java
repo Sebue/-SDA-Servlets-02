@@ -1,5 +1,6 @@
 package pl.sda.servlets.sixth;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,15 +27,22 @@ public class PostServlet extends HttpServlet {
 
 
 
+
+
+
+
+
+
 //todo after 405 - Method Not Allowed
     @Override
     protected void doGet(HttpServletRequest request,
-                         HttpServletResponse response) throws IOException {
+                         HttpServletResponse response) throws IOException, ServletException {
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter writer = response.getWriter();
 
         writer.println("Nie obsługuje getów");
+        request.getRequestDispatcher("/getServlet").include(request, response);
     }
 }

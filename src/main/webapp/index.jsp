@@ -17,6 +17,7 @@
 </FORM>
 <hr>
 <h3>Servlet 2: Redirects</h3>
+<a href="/servlets02/redirects">Strona przekierowania</a><br>
 <a href="/servlets02/clientRedirect">Po stronie klienta</a><br>
 <a href="/servlets02/serverRedirect">Po stronie serwera</a><br>
 <hr>
